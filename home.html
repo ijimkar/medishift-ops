@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ward Dashboard | MediShift Ops</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/calculator.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Sticky navigation header ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">+</span>
+        <span class="brand-name">Medi<span>Shift</span> Ops</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="home.html" class="active">Dashboard</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Switch between light and dark mode">🌙</button>
+        <button type="button" id="hamburgerBtn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+
+    <!-- Desktop: 3-column CSS Grid (250px 1fr 300px). Mobile: Flexbox column. -->
+    <main class="dashboard-layout">
+
+      <!-- ===== Left column: wards & shift summary ===== -->
+      <aside class="sidebar-left">
+        <div class="card">
+          <h3>Wards &amp; Units</h3>
+          <ul class="ward-list">
+            <li class="active"><span>Emergency ICU</span></li>
+            <li><span>General Ward A</span></li>
+            <li><span>Cardiology Wing</span></li>
+            <li><span>Pharmacy Store</span></li>
+            <li><span>Diagnostics Lab</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Active Shift Summary</h3>
+          <p><strong>Shift:</strong> Day (7:00 AM – 3:00 PM)</p>
+          <p><strong>Supervisor:</strong> Sunita Rao</p>
+          <p><strong>Nurses on duty:</strong> 14</p>
+          <p style="margin-bottom: 0;"><strong>Next handover:</strong> 3:00 PM</p>
+        </div>
+      </aside>
+
+      <!-- ===== Center column: live bed occupancy ===== -->
+      <section class="main-feed">
+        <h2>Live Ward Bed Occupancy</h2>
+        <p>Current status of beds, oxygen supply and duty staff in each ward.</p>
+
+        <div class="bed-grid">
+
+          <article class="bed-card critical">
+            <h4>Emergency ICU <span class="badge badge-critical">Critical</span></h4>
+            <p><strong>Beds:</strong> 1 available / 7 occupied</p>
+            <p><strong>Oxygen:</strong> Ready (2 spare cylinders)</p>
+            <p><strong>Nurse:</strong> Priya Nair</p>
+            <p><strong>Doctor:</strong> Dr. Arjun Mehta</p>
+          </article>
+
+          <article class="bed-card occupied">
+            <h4>General Ward A <span class="badge badge-occupied">Occupied</span></h4>
+            <p><strong>Beds:</strong> 3 available / 17 occupied</p>
+            <p><strong>Oxygen:</strong> Ready</p>
+            <p><strong>Nurse:</strong> Rahul Verma</p>
+            <p><strong>Doctor:</strong> Dr. Kavita Iyer</p>
+          </article>
+
+          <article class="bed-card">
+            <h4>Cardiology Wing <span class="badge badge-available">Available</span></h4>
+            <p><strong>Beds:</strong> 6 available / 6 occupied</p>
+            <p><strong>Oxygen:</strong> Ready</p>
+            <p><strong>Nurse:</strong> Meera Joseph</p>
+            <p><strong>Doctor:</strong> Dr. Sanjay Kulkarni</p>
+          </article>
+
+          <article class="bed-card occupied">
+            <h4>Pharmacy Store <span class="badge badge-occupied">Busy</span></h4>
+            <p><strong>Counters:</strong> 2 open / 1 closed</p>
+            <p><strong>Cold storage:</strong> Working (4°C)</p>
+            <p><strong>Clerk:</strong> Anil Das</p>
+            <p><strong>Pharmacist:</strong> Neha Gupta</p>
+          </article>
+
+          <article class="bed-card">
+            <h4>Diagnostics Lab <span class="badge badge-available">Available</span></h4>
+            <p><strong>Sample slots:</strong> 9 free today</p>
+            <p><strong>Oxygen:</strong> Not required</p>
+            <p><strong>Technician:</strong> Farah Khan</p>
+            <p><strong>Pathologist:</strong> Dr. Ramesh Pillai</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== Right column: calculator & alerts ===== -->
+      <aside class="sidebar-right">
+
+        <!-- FR-08: Ward Supply & Billing Calculator -->
+        <div class="calculator-box">
+          <h3>Ward Supply &amp; Billing Calculator</h3>
+          <div id="calcDisplay" class="calc-display">0</div>
+
+          <div class="calc-grid">
+            <button type="button" data-key="7">7</button>
+            <button type="button" data-key="8">8</button>
+            <button type="button" data-key="9">9</button>
+            <button type="button" class="calc-operator" data-key="/">/</button>
+
+            <button type="button" data-key="4">4</button>
+            <button type="button" data-key="5">5</button>
+            <button type="button" data-key="6">6</button>
+            <button type="button" class="calc-operator" data-key="*">*</button>
+
+            <button type="button" data-key="1">1</button>
+            <button type="button" data-key="2">2</button>
+            <button type="button" data-key="3">3</button>
+            <button type="button" class="calc-operator" data-key="-">-</button>
+
+            <button type="button" class="calc-zero" data-key="0">0</button>
+            <button type="button" class="calc-clear" data-key="C">C</button>
+            <button type="button" class="calc-operator" data-key="+">+</button>
+
+            <button type="button" class="calc-equals" data-key="=">=</button>
+          </div>
+        </div>
+
+        <!-- Urgent alerts -->
+        <div class="card">
+          <h3>Urgent Ward Alerts</h3>
+          <ul class="alert-list">
+            <li class="alert-item">Emergency ICU: only 1 bed left. Prepare transfer to General Ward A.</li>
+            <li class="alert-item warning">Pharmacy: insulin stock below reorder level.</li>
+            <li class="alert-item warning">Cardiology Wing: ECG machine 2 due for maintenance at 1:00 PM.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </main>
+  </div>
+
+  <!-- ===== FR-06: Floating assistant chatbot ===== -->
+  <button type="button" id="chatFab" class="chat-fab" aria-label="Open assistant chat">Chat</button>
+
+  <div id="chatPanel" class="chat-panel" hidden>
+    <div class="chat-header">
+      <h3>Clinical Assistant</h3>
+      <button type="button" id="chatClose" class="chat-close" aria-label="Close chat">&times;</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+      <div class="bot-msg">Hello! I'm the MediShift assistant. Ask me about emergency contacts, pharmacy timings, shift schedules or bed availability.</div>
+    </div>
+
+    <div class="chat-input-bar">
+      <input type="text" id="chatInput" placeholder="Ask about emergency, pharmacy, shift, beds...">
+      <button type="button" id="chatSend">Send</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    &copy; 2026 MediShift Ops | B.Tech CSE Web Technology Micro-Project
+  </footer>
+
+</body>
+</html>

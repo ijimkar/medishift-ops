@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MediShift Ops - a hospital ward and staff resource portal for bed occupancy, shift handovers and billing calculations.">
+  <title>MediShift Ops | Hospital Ward &amp; Staff Resource Portal</title>
+
+  <!-- Stylesheets: theme + components first, then layout -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Light / Dark theme handling -->
+  <script src="js/theme.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Sticky navigation header ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">+</span>
+        <span class="brand-name">Medi<span>Shift</span> Ops</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="home.html">Dashboard</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Switch between light and dark mode">🌙</button>
+        <button type="button" id="hamburgerBtn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== FR-01: Hero banner ===== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>MediShift Ops — Hospital Ward &amp; Staff Resource Portal</h1>
+        <p>
+          One place for receptionists, ward nurses, pharmacy clerks and floor
+          supervisors to check bed availability, hand over shifts and total up
+          ward supply and patient bills without paper registers.
+        </p>
+        <div class="hero-actions">
+          <a href="signin.html" class="btn">Staff Portal Login</a>
+          <a href="register.html" class="btn btn-outline">New Staff Registration</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Feature overview ===== -->
+    <section class="section">
+      <h2 class="section-title">What the portal does</h2>
+      <p class="section-subtitle">Three tools built for the daily routine of a hospital ward.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">🛏️</div>
+          <h3>Live Ward Bed Occupancy Tracker</h3>
+          <p>
+            See available and occupied beds for every ward, oxygen readiness and
+            the duty nurse and doctor on each unit. Status badges show critical
+            wards at a glance.
+          </p>
+          <p><span class="badge badge-available">Available</span>
+             <span class="badge badge-occupied">Occupied</span>
+             <span class="badge badge-critical">Critical</span></p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🧮</div>
+          <h3>Ward Supply &amp; Billing Calculator</h3>
+          <p>
+            A built-in calculator for adding up medicine, consumable and bed
+            charges. It handles divide-by-zero and invalid entries without
+            crashing.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>24/7 Clinical Protocol Assistant</h3>
+          <p>
+            A chat assistant that answers quick questions about emergency
+            contacts, pharmacy timings, shift schedules and bed availability at
+            any hour.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== System & document outline ===== -->
+    <section class="section">
+      <div class="system-outline">
+        <h2>System &amp; Document Outline</h2>
+        <p>
+          Shift handovers are often written on paper or passed on verbally, so
+          details about free beds, oxygen stock and patient billing can get
+          lost. MediShift Ops moves that information into one shared screen.
+        </p>
+        <ol>
+          <li><strong>Register and sign in:</strong> staff create an account with their employee ID and hospital division, then log in securely.</li>
+          <li><strong>Review the dashboard:</strong> the incoming shift checks ward status, bed counts and urgent alerts in one view.</li>
+          <li><strong>Handover:</strong> the outgoing team confirms duty nurse and doctor assignments for each ward.</li>
+          <li><strong>Calculate and ask:</strong> use the calculator for supply and billing totals and the assistant for quick protocol answers.</li>
+        </ol>
+        <p style="margin-top: 1rem; margin-bottom: 0;">
+          <strong>UN SDG 3 (Good Health and Well-Being):</strong> faster, clearer
+          handovers help patients get the right bed and care sooner.<br>
+          <strong>UN SDG 9 (Industry, Innovation and Infrastructure):</strong>
+          replaces paper registers with a simple, low-cost digital tool that any
+          hospital with a web browser can use.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 MediShift Ops | B.Tech CSE Web Technology Micro-Project
+  </footer>
+
+</body>
+</html>

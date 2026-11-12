@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Sign In | MediShift Ops</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/validation.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Sticky navigation header ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">+</span>
+        <span class="brand-name">Medi<span>Shift</span> Ops</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="home.html">Dashboard</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="signin.html" class="active">Sign In</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Switch between light and dark mode">🌙</button>
+        <button type="button" id="hamburgerBtn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-card">
+
+      <!-- Dynamic error banner: JS fills the text and removes "hidden" -->
+      <div id="signinAlert" class="alert-banner" hidden></div>
+
+      <h2>Staff Sign In</h2>
+      <p class="form-intro">Enter your hospital email and password to open the ward dashboard.</p>
+
+      <form id="signinForm" novalidate>
+
+        <div class="form-group">
+          <label for="signinEmail">Staff Email</label>
+          <input type="email" id="signinEmail" name="signinEmail" placeholder="name@hospital.org" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="signinPassword">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="signinPassword" name="signinPassword" placeholder="Enter your password" required>
+            <button type="button" id="togglePassword" class="toggle-password">Show</button>
+          </div>
+          <span class="error-msg"></span>
+        </div>
+
+        <button type="submit" id="signinBtn">Sign In</button>
+      </form>
+
+      <p class="form-footer">New to MediShift Ops? <a href="register.html">Register as staff</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 MediShift Ops | B.Tech CSE Web Technology Micro-Project
+  </footer>
+
+</body>
+</html>

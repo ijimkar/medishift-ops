@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Registration | MediShift Ops</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/validation.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Sticky navigation header ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">+</span>
+        <span class="brand-name">Medi<span>Shift</span> Ops</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="home.html">Dashboard</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Switch between light and dark mode">🌙</button>
+        <button type="button" id="hamburgerBtn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <h2>Staff Registration</h2>
+      <p class="form-intro">Create your MediShift Ops account. All fields are required.</p>
+
+      <form id="registerForm" novalidate>
+
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Priya Sharma" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="empId">Employee / Register ID</label>
+          <input type="text" id="empId" name="empId" placeholder="e.g. MS1024" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="name@hospital.org" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="dept">Hospital Division</label>
+          <select id="dept" name="dept" required>
+            <option value="">-- Select Hospital Division --</option>
+            <option value="Emergency">Emergency</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Pharmacy">Pharmacy</option>
+            <option value="Diagnostics">Diagnostics</option>
+          </select>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+          <span class="error-msg"></span>
+        </div>
+
+        <button type="submit" id="registerBtn" disabled>Register Staff Account</button>
+      </form>
+
+      <p class="form-footer">Already registered? <a href="signin.html">Sign in here</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 MediShift Ops | B.Tech CSE Web Technology Micro-Project
+  </footer>
+
+</body>
+</html>
